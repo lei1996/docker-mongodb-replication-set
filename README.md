@@ -1,2 +1,13 @@
 # docker-mongodb-replication-set
-Docker compose based MongoDB replication set
+This repository should simplify the tedious process of setting up a MongoDB replication set (3 Nodes). Therefore a shell script is provided, that handles all configuration.
+It is mandatory to provide user credentials (username & password) for maximum security.
+Port mapping is not dynamic (yet), so nodes are available via exposed ports:
+
+Node1: 27011
+Node2: 27012
+Node3: 27013
+
+Due to the fact that user credentials are stored in plaintext, inside the configuration files, I highly suggest deleting them after the first start.
+
+## Usage
+Run setup.sh with root privileges so that all necessary hostname entries can be made.
