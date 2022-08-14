@@ -5,6 +5,8 @@ This repository should simplify the tedious process of setting up a MongoDB repl
 ## Usage
 Run `setup.sh` with root privileges so that all necessary hostname entries can be made.
 
+![Demo](https://github.com/francois-egner/docker-mongodb-replication-set/blob/main/docker-demo.gif)
+
 **It is mandatory to provide user credentials (username & password) for maximum security.**
 
 Port mapping is not dynamic (yet), so nodes are available via exposed ports:
