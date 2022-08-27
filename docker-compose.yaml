@@ -5,7 +5,7 @@ services:
     container_name: mongo1
     image: mongo
     build: "./set_primary/"
-    restart: always
+    restart: unless-stopped
     volumes:
       - ./volumes/mongodb1:/data/db
     ports:
@@ -21,7 +21,7 @@ services:
     container_name: mongo2
     image: mongo
     build: "./set/"
-    restart: always
+    restart: unless-stopped
     volumes:
       - ./volumes/mongodb2:/data/db
     ports:
@@ -41,7 +41,7 @@ services:
     container_name: mongo3
     image: mongo
     build: "./set/"
-    restart: always
+    restart: unless-stopped
     volumes:
       - ./volumes/mongodb3:/data/db
     ports:
