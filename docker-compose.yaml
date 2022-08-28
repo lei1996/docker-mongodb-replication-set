@@ -8,13 +8,14 @@ services:
     restart: unless-stopped
     volumes:
       - ./volumes/mongodb1:/data/db
+      - ./set_primary:/root/set_primary
     ports:
       - "27011:27011"
     expose:
       - "27011"
     entrypoint:
       [
-        "/bin/bash", "/root/entry.sh"
+        "/bin/bash", "/root/set_primary/entry.sh"
       ]
 
   mongodb2:
@@ -32,7 +33,7 @@ services:
       [
         "/usr/bin/mongod",
         "--port", "27012",
-        "--replSet", "{REPLICATIONNAME}",
+        "--replSet", "rs3",
         "--bind_ip_all",
         "--keyFile", "/root/keyfile.key"
       ]
@@ -52,7 +53,7 @@ services:
       [
         "/usr/bin/mongod",
         "--port", "27013",
-        "--replSet", "{REPLICATIONNAME}",
+        "--replSet", "rs3",
         "--bind_ip_all",
         "--keyFile", "/root/keyfile.key"
       ]

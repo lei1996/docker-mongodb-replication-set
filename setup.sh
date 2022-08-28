@@ -39,9 +39,9 @@ read -p "Do you want to start MongoDB? The first start may take some time. (y/n)
 if [[ $start == *"y"* ]];
 then
     #Start container stack
-    docker-compose up --detach
+    docker compose up --detach
 else
-    echo "You can start MongoDB at a later point in time using: 'docker-compose up --detach' inside this folder. The first start may take some time..."
+    echo "You can start MongoDB at a later point in time using: 'docker compose up --detach' inside this folder. The first start may take some time..."
 fi
 
 echo
